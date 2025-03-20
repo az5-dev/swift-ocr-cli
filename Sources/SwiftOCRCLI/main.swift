@@ -144,8 +144,6 @@ if coordinateMode {
             }
         } else {
             // For plain text output, print the combined recognized text and details for each result.
-            print("Recognized text:\n\(plainText)\n")
-            print("Results:")
             for item in resultArray {
                 print(item)
             }
@@ -164,7 +162,7 @@ if coordinateMode {
                 print(jsonString)
             }
         } else {
-            print("Recognized text:\n\(text)")
+            print("\(text)")
         }
         semaphore.signal()
     }
