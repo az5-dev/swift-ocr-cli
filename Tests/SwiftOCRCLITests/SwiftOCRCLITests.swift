@@ -36,20 +36,20 @@ final class SwiftOCRCLITests: XCTestCase {
         wait(for: [expectation], timeout: 5.0)
     }
     
-    func testGridTextRecognition() {
+    func testCoordinatesTextRecognition() {
         guard let image = loadImage(fromBase64: sampleBase64) else {
             XCTFail("Failed to load image from base64.")
             return
         }
         
-        let expectation = XCTestExpectation(description: "Grid Text Recognition")
+        let expectation = XCTestExpectation(description: "Coordinates Text Recognition")
         
-        detectcoordinatess(in: image, recognitionLanguages: ["en-US"]) { results in
+        detectCoordinatess(in: image, recognitionLanguages: ["en-US"]) { results in
             XCTAssertNotNil(results, "No results recognized.")
             if let results = results, !results.isEmpty {
                 for item in results {
-                    XCTAssertFalse(item.text.isEmpty, "Recognized text is empty in grid result.")
-                    XCTAssertTrue(item.text.contains("Hello"), "Recognized text contains 'Hello' in grid result.")
+                    XCTAssertFalse(item.text.isEmpty, "Recognized text is empty in Coordinates result.")
+                    XCTAssertTrue(item.text.contains("Hello"), "Recognized text contains 'Hello' in Coordinates result.")
                     // The bounding box is normalized, so it should be within [0,1].
                     XCTAssertTrue(item.box.minX >= 0 && item.box.maxX <= 1, "Bounding box X out of range.")
                     XCTAssertTrue(item.box.minY >= 0 && item.box.maxY <= 1, "Bounding box Y out of range.")

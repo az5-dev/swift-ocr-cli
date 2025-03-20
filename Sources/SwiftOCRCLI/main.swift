@@ -67,15 +67,15 @@ let semaphore = DispatchSemaphore(value: 0)
 
 if coordinateMode {
     // Perform OCR with coordinate detection.
-    // The 'detectcoordinatess' function is assumed to asynchronously detect text blocks along with their bounding boxes.
-    detectcoordinatess(in: nsImage, recognitionLanguages: recognitionLanguages) { results in
+    // The 'detectCoordinatess' function is assumed to asynchronously detect text blocks along with their bounding boxes.
+    detectCoordinatess(in: nsImage, recognitionLanguages: recognitionLanguages) { results in
         // If no results are returned, output an empty JSON or a plain text message.
         guard let results = results, !results.isEmpty else {
             if jsonMode {
                 // Output an empty JSON structure.
                 let dict: [String: Any] = [
                     "text": "",
-                    "results": []
+                    "coordinatess": []
                 ]
                 if let jsonData = try? JSONSerialization.data(withJSONObject: dict, options: [.prettyPrinted]),
                    let jsonString = String(data: jsonData, encoding: .utf8) {
@@ -135,7 +135,7 @@ if coordinateMode {
             } else {
                 let dict: [String: Any] = [
                     "text": plainText,
-                    "results": resultArray
+                    "coordinatess": resultArray
                 ]
                 if let jsonData = try? JSONSerialization.data(withJSONObject: dict, options: [.prettyPrinted]),
                    let jsonString = String(data: jsonData, encoding: .utf8) {

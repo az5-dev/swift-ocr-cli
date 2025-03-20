@@ -321,7 +321,7 @@ $ swift-ocr-cli-arm-mac ./docs/images/test.png ko,en --json --coordinate
   - **Plain Text:** Simply outputs the recognized text.  
   - **JSON Format:** Use the `--json` flag to receive results in JSON.
 
-- **Grid Mode:**  
+- **Coordinates Mode:**  
   Use the `--coordinate` flag to get recognized text along with bounding box coordinates.  
   The output includes:
   - Recognized text.

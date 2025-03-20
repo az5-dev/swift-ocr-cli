@@ -44,8 +44,8 @@ public func detectText(
     }
 }
 
-// MARK: - Text recognition with coordinates (GRID mode)
-public func detectcoordinatess(
+// MARK: - Text recognition with coordinates (Coordinates mode)
+public func detectCoordinatess(
     in image: NSImage,
     recognitionLanguages: [String],
     completion: @escaping ([(text: String, box: CGRect)]?) -> Void
