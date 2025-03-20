@@ -44,7 +44,7 @@ final class SwiftOCRCLITests: XCTestCase {
         
         let expectation = XCTestExpectation(description: "Coordinates Text Recognition")
         
-        detectCoordinatess(in: image, recognitionLanguages: ["en-US"]) { results in
+        detectcoordinate(in: image, recognitionLanguages: ["en-US"]) { results in
             XCTAssertNotNil(results, "No results recognized.")
             if let results = results, !results.isEmpty {
                 for item in results {
