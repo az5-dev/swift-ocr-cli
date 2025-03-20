@@ -1,6 +1,9 @@
 import Foundation
 import AppKit
 
+// Define the version
+let VERSION = "1.0.0"
+
 #if os(macOS)
 import Vision
 
@@ -14,10 +17,17 @@ import Vision
 // Retrieve command line arguments.
 let arguments = CommandLine.arguments
 
+// Check for version flag
+if arguments.count > 1 && arguments[1] == "--version" {
+    print("swift-ocr-cli version \(VERSION)")
+    exit(0)
+}
+
 // Ensure that at least one argument is provided.
 guard arguments.count > 1 else {
     print("Usage: \(arguments[0]) <imageFilePath or base64String> [recognitionLanguages] [--coordinate] [--json]")
     print("Example: \(arguments[0]) /path/to/image.jpg ko-KR,en-US --coordinate --json")
+    print("       : \(arguments[0]) --version")
     exit(1)
 }
 
