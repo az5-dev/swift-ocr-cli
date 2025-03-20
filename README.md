@@ -26,7 +26,7 @@ A Swift command-line tool that uses Apple's [Vision](https://developer.apple.com
     ```
 3. **Run**:
     ```bash
-    swift run swift-ocr-cli <imageFilePath or base64String> [recognitionLanguages] [--grid] [--json]
+    swift run swift-ocr-cli <imageFilePath or base64String> [recognitionLanguages] [--coordinate] [--json]
     ```
 ### Examples
 
@@ -40,11 +40,11 @@ A Swift command-line tool that uses Apple's [Vision](https://developer.apple.com
     ```
 3. **Grid mode with JSON**:
     ```bash
-    swift run swift-ocr-cli /path/to/image.jpg --grid --json
+    swift run swift-ocr-cli /path/to/image.jpg --coordinate --json
     ```
 4. **Base64 input**:
     ```bash
-    swift run swift-ocr-cli <base64EncodedImageString> --grid
+    swift run swift-ocr-cli <base64EncodedImageString> --coordinate
     ```
 
 ## Release
