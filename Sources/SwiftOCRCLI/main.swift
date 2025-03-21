@@ -135,7 +135,7 @@ if coordinateMode {
             } else {
                 let dict: [String: Any] = [
                     "text": plainText,
-                    "coordinate": resultArray
+                    "coordinates": resultArray
                 ]
                 if let jsonData = try? JSONSerialization.data(withJSONObject: dict, options: [.prettyPrinted]),
                    let jsonString = String(data: jsonData, encoding: .utf8) {
