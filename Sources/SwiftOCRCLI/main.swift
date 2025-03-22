@@ -2,7 +2,30 @@ import Foundation
 import AppKit
 
 // Define the version
-let VERSION = "1.0.0"
+let VERSION = "1.0.1"
+let HELP = """
+Usage: \(arguments[0]) <imageFilePath or base64String> [recognitionLanguages] [--coordinate] [--json]
+
+Options:
+    --help                Show this help message and exit.
+    --version             Show version info.
+    recognitionLanguages  Comma-separated list of languages (default: en-US)
+    --coordinate          Include coordinate data (bounding boxes) in the output.
+    --json                Output the OCR result in JSON format instead of plain text.
+
+Returns:
+    -  Outputs plain text recognized from the image.
+    - With --json:
+        • Without --coordinate: JSON object with key "text".
+        • With --coordinate: JSON object containing:
+            "text": Combined recognized text,
+            "coordinate": Array of objects, each with:
+                "text": Recognized text,
+                "width": Bounding box width in pixels,
+                "height": Bounding box height in pixels,
+                "confidence": Default confidence value (0.9),
+                "coordinate": Dictionary with "x" and "y" pixel coordinates.
+"""
 
 #if os(macOS)
 import Vision
@@ -19,7 +42,13 @@ let arguments = CommandLine.arguments
 
 // Check for version flag
 if arguments.count > 1 && arguments[1] == "--version" {
-    print("swift-ocr-cli version \(VERSION)")
+    print(VERSION)
+    exit(0)
+}
+
+// Check for help flag
+if arguments.count > 1 && arguments[1] == "--help" {
+    print(HELP)
     exit(0)
 }
 
