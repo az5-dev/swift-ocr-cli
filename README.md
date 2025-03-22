@@ -26,7 +26,7 @@ You can easily install swift-ocr-cli using [Homebrew](https://brew.sh):
 ### Install swift-ocr
 
 ```bash
-brew tap azamara/tap
+brew tap az5/tap
 brew install swift-ocr
 ```
 
