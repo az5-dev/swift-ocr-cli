@@ -6,6 +6,9 @@
 
 ```bash
 $ swift-ocr-cli-arm-mac ./docs/images/test.png ko,en --json
+```
+
+```json
 {
   "text" : "[EPA 및 DHA 함유 유지] 혈중 중성지질 개선\n• 혈행 개선에 도움을 줄 수 있음, 기억력 개선\n에 동장에 도수 있 수 건조한 눈을 개선하여\n[비타민트 항산화 작용을 하여 유해산소로부터\n세포를 보호하는데 필요\n1일 섭취량 : 1캡슐(1,200 mg)\n1일 섭취량 당\n함량\n%영양성분기준치\n열량\n10 kcal\n탄수화물\n0 g\n단백질\n지방\n0 g\n1.2 g\n나트륨\n0 mg\nEPA 와 DHA의 합 900 mg\n비타민E\n3.4 mg a-TE\n0 %\n0 %\n2%\n0 %\n31 %\n※ %영양성분기준치 : 1일 영양성분기준치에 대한 비율"
 }
